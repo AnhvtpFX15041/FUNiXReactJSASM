@@ -23,8 +23,8 @@ class Main extends Component {
             );
           };
         const addStaff = (newstaff) => {
-          let dept = this.state.departments.filter((dept) =>{return dept.id === newstaff.target.department.value})[0];
-          let newstaffs = {
+          const dept = this.state.departments.filter((dept) =>{return dept.id === newstaff.target.department.value})[0];
+          const newstaffs = {
             id: this.state.staffs.length,
             name: newstaff.target.staffname.value,
             doB: newstaff.target.doB.value,
@@ -35,13 +35,13 @@ class Main extends Component {
             overTime: newstaff.target.overTime.value,
             image: '/assets/images/alberto.png',
           };
-          let key = this.state.departments.indexOf(dept);
-          let departments = this.state.departments.slice();
+          const key = this.state.departments.indexOf(dept);
+          const departments = this.state.departments.slice();
           departments[key].numberOfStaff += 1;
-          let staffobject = JSON.stringify(newstaffs);
-          localStorage.setItem("newstaffs", staffobject);
+          const staffobject = JSON.stringify(newstaffs);
+          localStorage.setItem(`${newstaffs.name}`, staffobject);
           this.setState({
-            staffs: [...this.state.staffs, JSON.parse(localStorage.getItem("newstaffs"))],
+            staffs: [...this.state.staffs, JSON.parse(localStorage.getItem(`${newstaffs.name}`))],
             departments: departments
           })
         }
