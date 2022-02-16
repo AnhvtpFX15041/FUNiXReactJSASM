@@ -36,12 +36,13 @@ class Main extends Component {
             image: '/assets/images/alberto.png',
           };
           let key = this.state.departments.indexOf(dept);
-          let depart = this.state.departments[key];
+          let departments = this.state.departments.slice();
+          departments[key].numberOfStaff += 1;
           let staffobject = JSON.stringify(newstaffs);
           localStorage.setItem("newstaffs", staffobject);
           this.setState({
             staffs: [...this.state.staffs, JSON.parse(localStorage.getItem("newstaffs"))],
-            departments: [...this.state.departments, depart.numberOfStaff+=1] 
+            departments: departments
           })
         }
         return (

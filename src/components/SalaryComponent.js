@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Card, CardText, CardBody, CardTitle, Breadcrumb, BreadcrumbItem, Button } from 'reactstrap';
+import React from 'react';
+import { Card, CardText, CardBody, CardTitle, Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
     function RenderSalary({staff}) {
