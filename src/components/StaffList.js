@@ -55,7 +55,7 @@ import { Link } from 'react-router-dom';
             const regexnumber = /^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$/;
             if (touch.doB && staffname === ''){
                 errors.staffname='Yêu cầu nhập'
-            } else if (touch.doB && staffname.length < 2){
+            } else if (touch.doB && staffname.length < 3){
                 errors.staffname='Yêu cầu nhiều hơn 2 ký tự'
             } else if (touch.doB && staffname.length > 29){
                 errors.staffname='Yêu cầu ít hơn 30 ký tự'
@@ -102,7 +102,7 @@ import { Link } from 'react-router-dom';
         const errors = validate(state.staffname, state.doB, state.startDate, state.salaryScale, state.annualLeave, state.overTime);
         return(
             <div>
-                <Button  onClick={toggleModal} style = {{marginTop: 3, marginLeft: 0}}><i className="fa fa-plus"></i></Button>
+                <Button  onClick={toggleModal} style = {{marginTop: 3, marginLeft: 7}}><i style={{width: 35}} className="fa fa-plus"></i></Button>
                 <Modal isOpen={isOpen}>
                     <ModalHeader toggle={toggleModal}>
                         <h5>Thêm nhân viên</h5>
@@ -150,7 +150,7 @@ import { Link } from 'react-router-dom';
                             <FormGroup row>
                                 <Label htmlFor="dept" lg={4} md={4} sm={12}>Phòng ban</Label>
                                 <Col lg={8} md={8} sm={12}>
-                                    <Input type="select" name="department">
+                                    <Input type="select" id="dept" name="department">
                                         <option value="Dept01">Sale</option>
                                         <option value="Dept02">HR</option>
                                         <option value="Dept03">Marketing</option>
@@ -225,12 +225,12 @@ import { Link } from 'react-router-dom';
                     <div className="col-12">
                         <div className="row">
                             <div style={{display: 'flex', justifyContent: 'left'}} className="col-12 col-md-6 col-lg-6 m-0">
-                                <h3 className="col-10 col-md-6 col-lg-6" style={{margin: 2, padding: 0}}>Nhân viên</h3> 
+                                <h3 className="col-9 col-md-8 col-lg-8" style={{margin: 2, padding: 0}}>Nhân viên</h3> 
                                 <AddStaff addStaff={props.addStaff}/>
                             </div>
-                            <Form onSubmit = {search} className="col-12 col-md-6 col-lg-6 m-0" style={{display: 'flex', justifyContent: 'right'}}>
-                                <Input className="col-10 col-md-6 col-lg-6" style = {{margin: 3}} type="text" placeholder="Nguyễn Văn A" innerRef={searchText}/>
-                                <Button className="col-2" style ={{backgroundColor: '#0d6efd', color: 'white', margin: 3}} >Tìm</Button>
+                            <Form onSubmit = {search} className="col-12 col-md-6 col-lg-6 m-0" style={{display: 'flex', justifyContent: 'left'}}>
+                                <Input className="col-9 col-md-8 col-lg-8" style = {{margin: 3, width: 20}} type="text" placeholder="Nguyễn Văn A" innerRef={searchText}/>
+                                <Button style ={{backgroundColor: '#0d6efd', color: 'white', margin: 3, marginLeft: 7, width: 58}}>Tìm</Button>
                             </Form>
                         </div>    
                         <hr />

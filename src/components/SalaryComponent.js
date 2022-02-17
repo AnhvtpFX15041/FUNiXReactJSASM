@@ -8,17 +8,16 @@ import { Link } from 'react-router-dom';
         return(
             <Card>
                 <CardBody>
-                <CardTitle>{staff.name}</CardTitle>
-                <CardText>Mã nhân viên: {staff.id}</CardText>
-                <CardText>Hệ số lương: {staff.salaryScale}</CardText>
-                <CardText>Số giờ làm thêm: {staff.overTime}</CardText>
-                <Card style={{backgroundColor: "#f7f7f7"}}>
-                <CardText className="ml-3">Lương: {(Math.round((staff.salaryScale)*basicSalary + (staff.overTime)*overTimeSalary)).toLocaleString()} VND</CardText>
-                </Card>
+                    <CardTitle>{staff.name}</CardTitle>
+                    <CardText>Mã nhân viên: {staff.id}</CardText>
+                    <CardText>Hệ số lương: {staff.salaryScale}</CardText>
+                    <CardText>Số giờ làm thêm: {staff.overTime}</CardText>
+                    <Card style={{backgroundColor: "#f7f7f7"}}>
+                        <CardText className="ml-3">Lương: {(Math.round((staff.salaryScale)*basicSalary + (staff.overTime)*overTimeSalary)).toLocaleString()} VND</CardText>
+                    </Card>
                 </CardBody>
-            </Card>
-                
-            );
+            </Card>   
+        );
     }
     function SalaryList (props) {
         const list = props.staffs.map((staff) => {
